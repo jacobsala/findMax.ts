@@ -6,7 +6,7 @@ export class Ring {
     public size: number;
 
      constructor(size: number) {
-        this.size = size;
+        this. = size;
      }
 }
 export function biggestRing(rings: Ring[]): number {
