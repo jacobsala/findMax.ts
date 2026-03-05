@@ -54,3 +54,30 @@ export function formatUDID(rawID: string): string {
         return rawID.toUpperCase().slice(0, 4);
     }
 }
+
+export function hasEmptyBag(bags: Inventory[]): boolean {
+    for (let bag of bags) {
+        if (bag.width === 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+export function applyDiscoung(prices: number[]): void {
+    for (let i = 0; i<prices.length; i++) {
+        if(prices[i] > 100) {
+            prices[i] = prices[i] - 20;
+        }
+    }
+}
+
+export function findCatByName(cats: Cat[], targetName: string): Cat | null {
+    let result: Cats[] = [];
+    for (let cat of cats) {
+        if (cat.name === targetName) {
+            return cat;
+        }
+    }
+    return null;
+}
