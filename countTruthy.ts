@@ -81,3 +81,22 @@ export function findCatByName(cats: Cat[], targetName: string): Cat | null {
     }
     return null;
 }
+
+export class Game {
+    public title: string;
+    public isXbox: boolean;
+
+    constructor(title: string, isXbox: boolean) {
+        this.title = title;
+        this.isXbox = isXbox;
+    }
+}
+
+export function findXboxGame(games: Game[]): Game | null {
+    for (let game of games) {
+        if (game.isXbox === true) {
+            return game;
+        }
+    }
+    return null;
+}
