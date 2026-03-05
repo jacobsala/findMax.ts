@@ -1,4 +1,4 @@
-export function countTruthy(values: Value[]): number {
+export function countTruthy(values: string[]): number {
     let count: number = 0;
     for (let value of values) {
         if(value) {
@@ -45,4 +45,12 @@ export function getBigBags(bags: Bag[]): Bag[] {
         }
     }
     return result;
+}
+
+export function formatUDID(rawID: string): string {
+    if (rawID.length < 4) {
+        return "INVALID";
+    } else {
+        return rawID.toUpperCase().slice(0, 4);
+    }
 }
