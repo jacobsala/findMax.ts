@@ -73,7 +73,6 @@ export function applyDiscoung(prices: number[]): void {
 }
 
 export function findCatByName(cats: Cat[], targetName: string): Cat | null {
-    let result: Cats[] = [];
     for (let cat of cats) {
         if (cat.name === targetName) {
             return cat;
@@ -96,6 +95,17 @@ export function findXboxGame(games: Game[]): Game | null {
     for (let game of games) {
         if (game.isXbox === true) {
             return game;
+        }
+    }
+    return null;
+}
+
+export function validateCourse(courseList: string[]): string | null {
+    for (let course of courseList) {
+        if (course.slice(0,4) === "CISC" && course.length == 7) {
+            return course.toLowerCase();
+        } else if (course === "") {
+            continue;
         }
     }
     return null;
